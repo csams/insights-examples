@@ -109,3 +109,4 @@ lib64
 pip-selfcheck.json
 share/
 pyvenv.cfg
+clean.sh
