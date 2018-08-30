@@ -1,0 +1,3 @@
+[submodule "insights-core"]
+	path = insights-core
+	url = https://github.com/RedHatInsights/insights-core.git
