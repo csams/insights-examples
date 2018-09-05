@@ -1,4 +1,10 @@
 #!/usr/bin/env python3.6
+"""
+This module shows that you can start the computation by using anything you like
+as the value for any component. This is useful for testing or integration where
+you have the value of a component and don't need or want the component to
+compute it for you. Obvious use cases are data ingress.
+"""
 from insights import dr
 from insights.core.plugins import make_fail, rule
 from insights.formats.text import HumanReadableFormat as Format
@@ -45,6 +51,7 @@ def report(a, b, c):
 
 if __name__ == "__main__":
     broker = dr.Broker()
+    # simply assign the value you want for the component
     broker[one] = 5
     with Format(broker):
         dr.run(broker=broker)

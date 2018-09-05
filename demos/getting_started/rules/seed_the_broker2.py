@@ -1,4 +1,8 @@
 #!/usr/bin/env python3.6
+"""
+This is similar to seed_the_broker.py except we provide data for a few
+components built into core.
+"""
 from insights import dr
 from insights.combiners.hostname import hostname
 from insights.core.plugins import make_fail, rule
