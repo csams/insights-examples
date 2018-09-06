@@ -7,6 +7,7 @@ develop = {
     "flake8",
     "jinja2",
     "ipython",
+    "mysqlclient",
     "pytest",
     "requests",
 }
