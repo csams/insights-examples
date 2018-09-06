@@ -29,10 +29,10 @@ class needs(dr.ComponentType):
 
 class prerequisite(dr.ComponentType):
     def invoke(self, broker):
-        results = super(prerequisite, self).invoke(broker)
-        if results is None:
+        result = super(prerequisite, self).invoke(broker)
+        if result is None:
             raise dr.SkipComponent()
-        return results
+        return result
 
 
 @needs()
@@ -61,7 +61,7 @@ def report(a, b, c):
 if __name__ == "__main__":
     broker = dr.Broker()
     # Core has a few formats for rendering rule output: human readable, json,
-    # and yaml. The json format is the same as is used by the service wrappers
-    # for communicating rule results.
+    # and yaml. The json format is the same as that used by the service
+    # wrappers for communicating rule results to other systems.
     with Format(broker):
         dr.run(broker=broker)

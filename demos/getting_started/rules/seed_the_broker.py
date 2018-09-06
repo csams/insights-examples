@@ -23,10 +23,10 @@ class needs(dr.ComponentType):
 
 class prerequisite(dr.ComponentType):
     def invoke(self, broker):
-        results = super(prerequisite, self).invoke(broker)
-        if results is None:
+        result = super(prerequisite, self).invoke(broker)
+        if result is None:
             raise dr.SkipComponent()
-        return results
+        return result
 
 
 @needs()
@@ -51,7 +51,8 @@ def report(a, b, c):
 
 if __name__ == "__main__":
     broker = dr.Broker()
-    # simply assign the value you want for the component
+
+    # assign the value you want for the component
     broker[one] = 5
     with Format(broker):
         dr.run(broker=broker)

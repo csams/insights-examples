@@ -12,10 +12,10 @@ class needs(dr.ComponentType):
 
 class prerequisite(dr.ComponentType):
     def invoke(self, broker):
-        results = super(prerequisite, self).invoke(broker)
-        if results is None:
+        result = super(prerequisite, self).invoke(broker)
+        if result is None:
             raise dr.SkipComponent()
-        return results
+        return result
 
 
 @needs()
@@ -38,8 +38,8 @@ def three(a, b):
 
 # The first parameter to make_* should be a string unique to the module, and
 # the keyword args can be whatever you like so long as they're json
-# serializable. These values are made available later to content templates like
-# human readable text or ansible plays.
+# serializable. These values are made available to content templates like human
+# readable text or ansible plays.
 @rule(one, two, three)
 def report(a, b, c):
     return make_fail("ERROR", a=a, b=b, c=c)
