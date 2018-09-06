@@ -2,11 +2,13 @@ from setuptools import setup, find_packages
 
 
 develop = {
+    "cachetools",
     "colorama",
     "flake8",
     "jinja2",
     "ipython",
     "pytest",
+    "requests",
 }
 
 if __name__ == "__main__":
