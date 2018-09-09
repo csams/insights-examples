@@ -6,6 +6,9 @@ from insights.core.plugins import datasource
 
 
 class Connection(object):
+    def connect(self):
+        raise NotImplemented()
+
     @contextmanager
     def transaction(self):
         with self.connection() as con:
