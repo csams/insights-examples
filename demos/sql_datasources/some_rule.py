@@ -1,20 +1,20 @@
 #!/usr/bin/env python
 from insights import rule, run
-from insights.core.plugins import make_pass
-from demos.sql_datasources.sql_specs import MysqlSpecs as Specs
+from insights.core.plugins import make_fail
+from demos.sql_datasources.rhev_specs import RhevSpecs as Specs
 
 
 CONTENT = """
-{%- for p in people %}
-Name: {{p.name}}
-Age: {{p.age}}
+{%- for r in roles %}
+Name: {{r.name}}
+Description: {{r.description}}
 {% endfor %}
 """.strip()
 
 
-@rule(Specs.people)
-def report(ppl):
-    return make_pass("PASSED", people=ppl)
+@rule(Specs.roles)
+def report(roles):
+    return make_fail("ERROR", roles=roles)
 
 
 if __name__ == "__main__":

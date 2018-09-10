@@ -8,6 +8,7 @@ develop = {
     "jinja2",
     "ipython",
     "mysqlclient",
+    "psycopg2-binary",  # dev only - http://initd.org/psycopg/docs/install.html#binary-install-from-pypi
     "pytest",
     "requests",
 }
