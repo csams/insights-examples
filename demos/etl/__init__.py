@@ -78,8 +78,8 @@ class Stage(mp.Process):
             except StopProcessing:
                 break
             except Exception as ex:
-                break
                 traceback.print_exc()
+                break
 
     def run(self):
         self.go()
