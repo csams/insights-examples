@@ -34,7 +34,7 @@ def three(a, b):
 
 
 # Rules should return one of None, make_pass, or make_fail. Some rules return
-# make_response, but that's an alias for make_fail.
+# make_response, but that's just an alias for make_fail.
 
 # The first parameter to make_* should be a string unique to the module, and
 # the keyword args can be whatever you like so long as they're json

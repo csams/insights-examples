@@ -110,3 +110,4 @@ pip-selfcheck.json
 share/
 pyvenv.cfg
 clean.sh
+*.swp
